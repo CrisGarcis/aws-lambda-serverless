@@ -1,0 +1,17 @@
+service: serverlesslambda
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: dev
+  profile: newuser
+  region: eu-central-1
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          method: get
+          path: /helloWorld
